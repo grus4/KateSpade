@@ -15,11 +15,12 @@ public class CategoryLandingPage extends Page {
 
     public void switchToStandardPDP() {
         web.clickElement("FirstProductInGrid");
-        web.waitForElementPresent("AddToCartButton");
-        web.waitForElementToBeClickable("AddToCartButton");
+        web.swithcToIframe();
+        //web.waitForElementPresent("FindItNearShopYouButton");
+        //web.waitForElementToBeClickable("FindItNearShopYouButton");
 
-        if(web.isElementPresent("AddToCartButton")
-                && web.isElementAvailable("AddToCartButton")){
+        if(web.isElementPresent("FindItNearShopYouButton")
+                && web.isElementAvailable("FindItNearShopYouButton")){
             log.info("Switching to PDP was correct");
         } else {
             log.info("Switching to PDP was INCORRECT!");

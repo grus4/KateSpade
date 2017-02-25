@@ -52,7 +52,7 @@ public abstract class Page {
 
     public void openPage(String pageURL) {
         get(pageURL);
-        sleep(6000);
+        sleep(8000);
         log.info("Start open page.");
         log.info("I'm on the " + getCurrentPageURL());
 

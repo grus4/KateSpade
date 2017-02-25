@@ -13,8 +13,8 @@ public class VariationPDP extends Page{
 
     public void addVariationProductToCart() {
         web.clickElement("SizeSwatch");
-        web.waitForElementToBeClickable("AddToCartButton");
-        web.clickButton("AddToCartButton");
+        web.waitForElementToBeClickable("AddToBagButton");
+        web.clickButton("AddToBagButton");
         web.waitForElementPresent("ViewCart");
         web.waitForElementToBeClickable("ViewCart");
 

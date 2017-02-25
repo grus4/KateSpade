@@ -14,7 +14,7 @@ public class StandardPDP extends Page {
 
     public void addProductToCart() {
 
-        web.clickButton("AddToCartButton");
+        web.clickButton("AddToBagButton");
         web.waitForElementPresent("ViewCart");
         web.waitForElementToBeClickable("ViewCart");
 
@@ -25,5 +25,10 @@ public class StandardPDP extends Page {
             Assert.fail("The product has been INCORRECTLY ADDED TO THE CART!");
         }
 
+    }
+
+    public void selectSize() {
+        web.clickElement("SizeSwatch");
+        web.waitForElementToBeClickable("AddToBagButton");
     }
 }

@@ -173,7 +173,7 @@ public class WebElementsActions {
         actions.moveToElement(webElement);
         actions.perform();  //!!! always need
         clickButton(clickToElement);
-        log.info("moved To Element " + moveToLocator + " and clicked on " + clickToElement);
+        log.info("moved To Element " + moveToLocator + " and click on " + clickToElement);
     }
 
     /**
@@ -272,6 +272,15 @@ public class WebElementsActions {
         webDriverWrapper.switchTo().frame("injectedUl");
 
     }
+
+    /**
+     * This method is used to switch to iframe by name
+     */
+    public void swithcToIframe1(){
+        webDriverWrapper.switchTo().frame("scroll-frame-iframe");
+
+    }
+
 
     /**
      * This method is used to switch to exit the frame

@@ -38,7 +38,9 @@ public class Header extends Page {
     }
 
     public void switchToCLP() {
-        web.moveToElementAndClick("NewArrivalsCategory", "WomenSubcategory");
+        web.moveToElementAndClick("ClothingCategory", "DressesSubcategory");
+        web.waitForElementPresent("SortingDropDown");
+        web.waitForElementToBeClickable("SortingDropDown");
 
         if(web.isElementPresent("SortingDropDown")
                 && web.isElementAvailable("SortingDropDown")){
