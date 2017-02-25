@@ -1,7 +1,6 @@
 package tests;
 
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
@@ -25,8 +24,8 @@ public class LoginTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Fill Password Field");
         kateSpade.loginPage.switchToMyAccount();
         extentTest.log(LogStatus.INFO, "Switch to My Account page");
-        Assert.assertTrue(kateSpade.myAccountPage.isLogoutButtonIsAvailable(), "Logout button is not displayed");
-        extentTest.log(LogStatus.INFO, "Login to Account was correct");
+        kateSpade.header.checkCongratulationMessage();
+        extentTest.log(LogStatus.INFO, "Login to My Account was correct and congratulation link is displayed correctly");
         kateSpade.header.logout();
         extentTest.log(LogStatus.INFO, "Logout from MyAccount");
     }
@@ -37,11 +36,11 @@ public class LoginTests extends Fixture {
                 .startTest("emptyFieldsValidationFotLoginForm")
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
-        extentTest.log(LogStatus.INFO, "Open SiteGenesis Home Page");
+        extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
         kateSpade.header.openLoginForm();
-        extentTest.log(LogStatus.INFO, "Switching to Login page");
-        kateSpade.loginPage.clickLoginButton();
-        extentTest.log(LogStatus.INFO, "Leave empty fields and click the Login Button");
+        extentTest.log(LogStatus.INFO, "Open Login Form");
+        kateSpade.loginPage.clickSignInButton();
+        extentTest.log(LogStatus.INFO, "Leave empty fields and click the Sign In Button");
         kateSpade.loginPage.checkValidationForAllEptyFields();
         extentTest.log(LogStatus.INFO, "Validation message appears under each field");
     }
@@ -52,15 +51,15 @@ public class LoginTests extends Fixture {
                 .startTest("invalidDataValidationForEmailWithMissingAt")
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
-        extentTest.log(LogStatus.INFO, "Open SiteGenesis Home Page");
+        extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
         kateSpade.header.openLoginForm();
-        extentTest.log(LogStatus.INFO, "Switching to Login page");
+        extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_MISSING_AT);
         extentTest.log(LogStatus.INFO, "Fill in an invalid email with missing at");
         kateSpade.loginPage.fillPasswordField(PASSWORD);
         extentTest.log(LogStatus.INFO, "Fill in a valid password");
-        kateSpade.loginPage.clickLoginButton();
-        extentTest.log(LogStatus.INFO, "Click the Login Button");
+        kateSpade.loginPage.clickSignInButton();
+        extentTest.log(LogStatus.INFO, "Click the Sign In Button");
         kateSpade.loginPage.checkValidationForInvalidData();
         extentTest.log(LogStatus.INFO, "Validation message appears under the email field");
     }
@@ -71,15 +70,15 @@ public class LoginTests extends Fixture {
                 .startTest("invalidDataValidationForEmailFieldWithMissingAddress")
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
-        extentTest.log(LogStatus.INFO, "Open SiteGenesis Home Page");
+        extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
         kateSpade.header.openLoginForm();
-        extentTest.log(LogStatus.INFO, "Switching to Login page");
+        extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_MISSING_ADDRESS);
         extentTest.log(LogStatus.INFO, "Fill in an invalid email with missing address");
         kateSpade.loginPage.fillPasswordField(PASSWORD);
         extentTest.log(LogStatus.INFO, "Fill in a valid password");
-        kateSpade.loginPage.clickLoginButton();
-        extentTest.log(LogStatus.INFO, "Click the Login Button");
+        kateSpade.loginPage.clickSignInButton();
+        extentTest.log(LogStatus.INFO, "Click the Sign In Button");
         kateSpade.loginPage.checkValidationForInvalidData();
         extentTest.log(LogStatus.INFO, "Validation message appears under the email field");
     }
@@ -90,15 +89,15 @@ public class LoginTests extends Fixture {
                 .startTest("invalidDataValidationForEmailFieldWithSuperfluousText")
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
-        extentTest.log(LogStatus.INFO, "Open SiteGenesis Home Page");
+        extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
         kateSpade.header.openLoginForm();
-        extentTest.log(LogStatus.INFO, "Switching to Login page");
+        extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_SUPERFLUOUS_TEXT);
         extentTest.log(LogStatus.INFO, "Fill in an invalid email with SUPERFLUOUS_TEXT");
         kateSpade.loginPage.fillPasswordField(PASSWORD);
         extentTest.log(LogStatus.INFO, "Fill in a valid password");
-        kateSpade.loginPage.clickLoginButton();
-        extentTest.log(LogStatus.INFO, "Click the Login Button");
+        kateSpade.loginPage.clickSignInButton();
+        extentTest.log(LogStatus.INFO, "Click the Sign In Button");
         kateSpade.loginPage.checkValidationForInvalidData();
         extentTest.log(LogStatus.INFO, "Validation message appears under the email field");
     }
@@ -109,15 +108,15 @@ public class LoginTests extends Fixture {
                 .startTest("invalidDataValidationForEmailFieldCopyPasteFromAddressBookWithName")
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
-        extentTest.log(LogStatus.INFO, "Open SiteGenesis Home Page");
+        extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
         kateSpade.header.openLoginForm();
-        extentTest.log(LogStatus.INFO, "Switching to Login page");
+        extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_COPY_PASTE_FROM_ADDRESS_BOOK_WITH_NAME);
         extentTest.log(LogStatus.INFO, "Fill in an invalid email with COPY_PASTE_FROM_ADDRESS_BOOK_WITH_NAME");
         kateSpade.loginPage.fillPasswordField(PASSWORD);
         extentTest.log(LogStatus.INFO, "Fill in a valid password");
-        kateSpade.loginPage.clickLoginButton();
-        extentTest.log(LogStatus.INFO, "Click the Login Button");
+        kateSpade.loginPage.clickSignInButton();
+        extentTest.log(LogStatus.INFO, "Click the Sign In Button");
         kateSpade.loginPage.checkValidationForInvalidData();
         extentTest.log(LogStatus.INFO, "Validation message appears under the email field");
     }
@@ -128,15 +127,15 @@ public class LoginTests extends Fixture {
                 .startTest("invalidDataValidationForEmailFieldWithTwoAt")
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
-        extentTest.log(LogStatus.INFO, "Open SiteGenesis Home Page");
+        extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
         kateSpade.header.openLoginForm();
-        extentTest.log(LogStatus.INFO, "Switching to Login page");
+        extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_COPY_WITH_TWO_AT);
         extentTest.log(LogStatus.INFO, "Fill in an INVALID_EMAIL_COPY_WITH_TWO_AT");
         kateSpade.loginPage.fillPasswordField(PASSWORD);
         extentTest.log(LogStatus.INFO, "Fill in a valid password");
-        kateSpade.loginPage.clickLoginButton();
-        extentTest.log(LogStatus.INFO, "Click the Login Button");
+        kateSpade.loginPage.clickSignInButton();
+        extentTest.log(LogStatus.INFO, "Click the Sign In Button");
         kateSpade.loginPage.checkValidationForInvalidData();
         extentTest.log(LogStatus.INFO, "Validation message appears under the email field");
     }
@@ -147,15 +146,15 @@ public class LoginTests extends Fixture {
                 .startTest("invalidDataValidationForEmailFieldSpecialCharacters")
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
-        extentTest.log(LogStatus.INFO, "Open SiteGenesis Home Page");
+        extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
         kateSpade.header.openLoginForm();
-        extentTest.log(LogStatus.INFO, "Switching to Login page");
+        extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_SPECIAL_CHARACTERS);
         extentTest.log(LogStatus.INFO, "Fill in an INVALID_EMAIL_SPECIAL_CHARACTERS");
         kateSpade.loginPage.fillPasswordField(PASSWORD);
         extentTest.log(LogStatus.INFO, "Fill in a valid password");
-        kateSpade.loginPage.clickLoginButton();
-        extentTest.log(LogStatus.INFO, "Click the Login Button");
+        kateSpade.loginPage.clickSignInButton();
+        extentTest.log(LogStatus.INFO, "Click the Sign In Button");
         kateSpade.loginPage.checkValidationForInvalidData();
         extentTest.log(LogStatus.INFO, "Validation message appears under the email field");
     }
@@ -167,16 +166,16 @@ public class LoginTests extends Fixture {
                 .startTest("invalidDataValidationForPasswordField")
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
-        extentTest.log(LogStatus.INFO, "Open SiteGenesis Home Page");
+        extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
         kateSpade.header.openLoginForm();
-        extentTest.log(LogStatus.INFO, "Switching to Login page");
+        extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(EMAIL);
         extentTest.log(LogStatus.INFO, "Fill in a valid email");
         kateSpade.loginPage.fillPasswordField(INVALID_PASSWORD);
         extentTest.log(LogStatus.INFO, "Fill in an invalid password");
-        kateSpade.loginPage.clickLoginButton();
-        extentTest.log(LogStatus.INFO, "Click the Login Button");
-        kateSpade.loginPage.checkValidationForInvalidData();
+        kateSpade.loginPage.clickSignInButton();
+        extentTest.log(LogStatus.INFO, "Click the Sign In Button");
+        kateSpade.loginPage.checkValidationForInvalidPassword();
         extentTest.log(LogStatus.INFO, "Validation message appears under the password field");
     }
 
@@ -186,17 +185,16 @@ public class LoginTests extends Fixture {
                 .startTest("invalidDataValidationForEmailAndPasswordFields")
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
-        extentTest.log(LogStatus.INFO, "Open SiteGenesis Home Page");
+        extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
         kateSpade.header.openLoginForm();
-        extentTest.log(LogStatus.INFO, "Switching to Login page");
+        extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_MISSING_AT);
         extentTest.log(LogStatus.INFO, "Fill in an INVALID_EMAIL_MISSING_AT");
         kateSpade.loginPage.fillPasswordField(INVALID_PASSWORD);
         extentTest.log(LogStatus.INFO, "Fill in an invalid password");
-        kateSpade.loginPage.clickLoginButton();
-        extentTest.log(LogStatus.INFO, "Click the Login Button");
+        kateSpade.loginPage.clickSignInButton();
+        extentTest.log(LogStatus.INFO, "Click the Sign In Button");
         kateSpade.loginPage.checkValidationForInvalidData();
-        extentTest.log(LogStatus.INFO, "Validation message appears under the email and password fields");
-
+        extentTest.log(LogStatus.INFO, "Validation message appears under the email field");
     }
 }

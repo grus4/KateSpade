@@ -93,7 +93,7 @@ public class Fixture extends ExtentManager {
             String screenshot_path = Utility.captureScreenshot(driver, result.getName());
             //String image = extentTest.addScreenCapture(screenshot_path);
             extentTest.log(LogStatus.FAIL, result.getThrowable());
-            extentTest.log(LogStatus.FAIL, "Snapshot below: " + extentTest.addScreenCapture(screenshot_path));
+            //extentTest.log(LogStatus.FAIL, "Snapshot below: " + extentTest.addScreenCapture(screenshot_path));
 
         } else {
             if (result.getStatus() == ITestResult.SKIP) {

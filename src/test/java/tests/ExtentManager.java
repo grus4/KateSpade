@@ -18,7 +18,7 @@ public class ExtentManager {
             extentReports.loadConfig(new File("D:\\Selenium group\\KateSpade\\extent-config.xml"));
             extentReports
                     .addSystemInfo("Host Name", "GRus")
-                    .addSystemInfo("Environment", "QA");
+                    .addSystemInfo("Environment", "DEV01");
 
         }
 

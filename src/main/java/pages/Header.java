@@ -13,21 +13,23 @@ public class Header extends Page {
 
     public void openLoginForm() {
         web.clickElement("SignInLink");
+        sleep(3000);
+        web.waitForElementToBeClickable("EmailAddressField");
     }
 
     public void logout() {
-        web.clickElement("SignInLink");
-        web.clickButton("LogOutButton");
-
+        web.doFocusToElementAndClick("CongratulationLink", "LogOutButton");
     }
 
-    public void switchToCreateAccountPage() {
+    public void switchToCreateAccountHopup() {
         web.clickElement("SignInLink");
-        web.waitForElementToBeClickable("RegisterLink");
-        web.clickLink("RegisterLink");
+        sleep(3000);
+        web.waitForElementToBeClickable("EmailAddressField");
+        web.waitForElementToBeClickable("CreateAnAccountButton");
+        web.clickLink("CreateAnAccountButton");
 
-        if(web.isElementPresent("ApplyButton")
-                && web.isElementAvailable("ApplyButton")) {
+        if(web.isElementPresent("SubmitButton")
+                && web.isElementAvailable("SubmitButton")) {
             log.info("Switching to Create Account page was correct");
         } else {
             log.error("Switching to Create Account page was INCORRECT!\n");
@@ -63,5 +65,20 @@ public class Header extends Page {
 
     public void switchToHomePage() {
         web.clickElement("Logo");
+    }
+
+    public void checkCongratulationMessage() {
+
+        if(web.isElementPresent("CongratulationLink")
+                && web.getElementText("CongratulationLink").equals("hi, Max")) {
+            log.info("Congratulation Message is displayed correctly");
+        } else {
+            log.error("Congratulation Message is displayed INCORRECTLY!!" + "\n"
+                    + "is Congratulation Message present - " + web.isElementPresent("CongratulationLink") + "\n"
+                    + "Congatulation Message - " + web.getElementText("CongratulationLink"));
+            Assert.fail("Congratulation Message is displayed INCORRECTLY!!" + "\n"
+                    + "is Congratulation Message present - " + web.isElementPresent("CongratulationLink") + "\n"
+                    + "Congatulation Message - " + web.getElementText("CongratulationLink"));
+        }
     }
 }

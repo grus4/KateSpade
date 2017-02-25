@@ -35,8 +35,10 @@ public class CreateAccountPage extends Page{
         web.input("ConfirmPassword", password);
     }
 
-    public void clickApplyButton() {
-        web.clickButton("ApplyButton");
+    public void clickSubmitButton() {
+        web.clickButton("SubmitButton");
+        web.waitForElementPresent("CongratulationLink");
+        web.waitForElementToBeClickable("CongratulationLink");
     }
 
     public void checkValidationForAllEmptyFields() {
@@ -51,7 +53,7 @@ public class CreateAccountPage extends Page{
 
     public void checkValidationForEmptyFirstNameField(){
         if(web.isElementPresent("ErrorMessageForEmptyFirstNameField")
-                && web.getElementText("ErrorMessageForEmptyFirstNameField").equals("This field is required.")){
+                && web.getElementText("ErrorMessageForEmptyFirstNameField").equals("please enter a first name")){
             log.info("First Name Error Message for empty field is displayed correctly under the field");
         } else {
             log.error("First Name Error Message for empty field is displayed INCORRECTLY!" + "\n"
@@ -66,7 +68,7 @@ public class CreateAccountPage extends Page{
 
     public void checkValidationForEmptyLastNameField(){
         if(web.isElementPresent("ErrorMessageForEmptyLastNameField")
-                && web.getElementText("ErrorMessageForEmptyLastNameField").equals("This field is required.")){
+                && web.getElementText("ErrorMessageForEmptyLastNameField").equals("please enter a last name")){
             log.info("Last Name Error Message for empty field is displayed correctly under the field");
         } else {
             log.error("Last Name Error Message for empty field is displayed INCORRECTLY!" + "\n"
@@ -81,7 +83,7 @@ public class CreateAccountPage extends Page{
 
     public void checkValidationForEmptyEmailField(){
         if(web.isElementPresent("ErrorMessageForEmptyEmail")
-                && web.getElementText("ErrorMessageForEmptyEmail").equals("This field is required.")){
+                && web.getElementText("ErrorMessageForEmptyEmail").equals("please enter an email.")){
             log.info("Email Error Message for empty field is displayed correctly under the field");
         } else {
             log.error("Email Error Message for empty field is displayed INCORRECTLY!" + "\n"
@@ -96,7 +98,7 @@ public class CreateAccountPage extends Page{
 
     public void checkValidationForEmptyConfirmEmailField(){
         if(web.isElementPresent("ErrorMessageForEmptyConfirmEmail")
-                && web.getElementText("ErrorMessageForEmptyConfirmEmail").equals("This field is required.")){
+                && web.getElementText("ErrorMessageForEmptyConfirmEmail").equals("please enter an email confirmation")){
             log.info("Confirm Email Error Message for empty field is displayed correctly under the field");
         } else {
             log.error("Confirm Email Error Message for empty field is displayed INCORRECTLY!" + "\n"
@@ -203,5 +205,9 @@ public class CreateAccountPage extends Page{
                     + "is Error message for incorrect Password length present - " + web.isElementPresent("ErrorMessageForIncorrectPasswordLength") + "\n"
                     + "Error message for incorrect Password length - " + web.getElementText("ErrorMessageForIncorrectPasswordLength"));
         }
+    }
+
+    public void fillZipCodeField(String zip) {
+        web.input("ZipCode", zip);
     }
 }
