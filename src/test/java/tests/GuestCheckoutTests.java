@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
  */
 public class GuestCheckoutTests extends Fixture {
 
-    @Test
+    //@Test
     public void guestCheckout_FreeGround_VISA() {
         extentTest = extentReports
                 .startTest("guestCheckout_FreeGround_VISA")
@@ -18,24 +18,35 @@ public class GuestCheckoutTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
         kateSpade.header.switchToCLP();
         extentTest.log(LogStatus.INFO, "Switch to CLP");
-        kateSpade.categoryLandingPage.switchToStandardPDP();
-        extentTest.log(LogStatus.INFO, "Switch to Standard PDP");
-        kateSpade.standardPDP.selectSize();
-        extentTest.log(LogStatus.INFO, "Select size on PDP");
-        /*kateSpade.standardPDP.addProductToCart();
+        kateSpade.categoryLandingPage.openQuickViewHopup();
+        extentTest.log(LogStatus.INFO, "Open quick view hopup of the first product in the grid");
+        kateSpade.quickViewHopup.clickAddToBagButton();
+        extentTest.log(LogStatus.INFO, "Add product to the mini cart");
         kateSpade.header.switchToShoppingCart();
-        kateSpade.shoppingCartPage.switchToLoginCheckoutPage();
-        kateSpade.checkoutLoginPage.switchToGuestShippingPage();
+        extentTest.log(LogStatus.INFO, "Switching to the Shopping cart");
+        kateSpade.shoppingCartPage.switchToShippingPage();
+        extentTest.log(LogStatus.INFO, "Switching to the Shipping cart");
+        kateSpade.shoppingCartPage.switchToIframe();
         kateSpade.shippingPage.fillFirstNameField(FIRSTNAME);
+        extentTest.log(LogStatus.INFO, "Fill in the  First Name field on the Shipping page");
         kateSpade.shippingPage.fillLastNameField(LASTNAME);
+        extentTest.log(LogStatus.INFO, "Fill in the Last Name field on the Shipping page");
         kateSpade.shippingPage.fillAddressLine_1_Field(ADDRESS_1);
+        extentTest.log(LogStatus.INFO, "Fill in the address field");
         kateSpade.shippingPage.fillAddressLine_2_Field("");
+        kateSpade.shippingPage.selectCountry(COUNTRY);
+        extentTest.log(LogStatus.INFO, "Select Country from the drop down field");
         kateSpade.shippingPage.fillCityField(CITY);
-        kateSpade.shippingPage.fillZipField(ZIP);
+        extentTest.log(LogStatus.INFO, "Fill in the city field");
         kateSpade.shippingPage.selectState(STATE);
+        extentTest.log(LogStatus.INFO, "Select state from the drop down field");
+        kateSpade.shippingPage.fillZipField(ZIP);
+        extentTest.log(LogStatus.INFO, "Fill in the zip field");
         kateSpade.shippingPage.fillPhoneField(PHONE);
+        extentTest.log(LogStatus.INFO, "Fill in the phone field");
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
-        kateSpade.shippingPage.switchToBillingPage();
+        extentTest.log(LogStatus.INFO, "Check the This is also my billing address checkbox");
+        /*kateSpade.shippingPage.switchToBillingPage();
         kateSpade.billingPage.fillEmailField(EMAIL);
         kateSpade.billingPage.fillCardName(CARDNAME_VISA);
         kateSpade.billingPage.fillCardNumber(CARDNUMBER_VISA);
@@ -48,7 +59,7 @@ public class GuestCheckoutTests extends Fixture {
         kateSpade.header.switchToHomePage();*/
     }
 
-    @Test
+    //@Test
     public void guestCheckout_2DayExpress_MasterCard() {
         kateSpade.homePage.openPage(SITE_URL);
         kateSpade.header.switchToCLP();
@@ -81,7 +92,7 @@ public class GuestCheckoutTests extends Fixture {
         kateSpade.header.switchToHomePage();
     }
 
-    @Test
+    //@Test
     public void guestCheckout_Overnight_AmericanExpress() {
         kateSpade.homePage.openPage(SITE_URL);
         kateSpade.header.switchToCLP();
@@ -114,7 +125,7 @@ public class GuestCheckoutTests extends Fixture {
          kateSpade.header.switchToHomePage();
     }
 
-    @Test
+    //@Test
     public void guestCheckout_2DayExpress_Discover() {
         kateSpade.homePage.openPage(SITE_URL);
         kateSpade.header.switchToCLP();
