@@ -29,6 +29,6 @@ public class StandardPDP extends Page {
 
     public void selectSize() {
         web.clickElement("SizeSwatch");
-        web.waitForElementToBeClickable("AddToBagButton");
+        //web.waitForElementToBeClickable("AddToBagButton");
     }
 }

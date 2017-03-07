@@ -33,7 +33,7 @@ public class LoginTests extends Fixture {
     }
 
     @Test
-    public void emptyFieldsValidationFotLoginForm() {
+    public void emptyFieldsValidationForLoginForm() {
         extentTest = extentReports
                 .startTest("emptyFieldsValidationFotLoginForm")
                 .assignCategory("Smoke Testing");

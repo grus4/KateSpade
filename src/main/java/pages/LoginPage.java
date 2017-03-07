@@ -25,7 +25,7 @@ public class LoginPage extends Page {
 
     public void clickSignInButton() {
         web.clickButton("SigInButton");
-        web.waitForElementPresent("ErrorMessageForInvalidDataInPasswordField");
+        sleep(3000);
 
     }
 
