@@ -7,15 +7,18 @@ import org.testng.annotations.Test;
 /**
  * Created by Rus on 16.01.2017.
  */
+
 public class GuestCheckoutTests extends Fixture {
 
-    //@Test
+    @Test
     public void guestCheckout_FreeGround_VISA() {
         extentTest = extentReports
                 .startTest("guestCheckout_FreeGround_VISA")
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.switchToCLP();
         extentTest.log(LogStatus.INFO, "Switch to CLP");
         kateSpade.categoryLandingPage.openQuickViewHopup();
@@ -26,7 +29,6 @@ public class GuestCheckoutTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Switching to the Shopping cart");
         kateSpade.shoppingCartPage.switchToShippingPage();
         extentTest.log(LogStatus.INFO, "Switching to the Shipping cart");
-        kateSpade.shoppingCartPage.switchToIframe();
         kateSpade.shippingPage.fillFirstNameField(FIRSTNAME);
         extentTest.log(LogStatus.INFO, "Fill in the  First Name field on the Shipping page");
         kateSpade.shippingPage.fillLastNameField(LASTNAME);
@@ -46,8 +48,9 @@ public class GuestCheckoutTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Fill in the phone field");
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
         extentTest.log(LogStatus.INFO, "Check the This is also my billing address checkbox");
-        /*kateSpade.shippingPage.switchToBillingPage();
-        kateSpade.billingPage.fillEmailField(EMAIL);
+        kateSpade.shippingPage.switchToShippingMethodPage();
+        extentTest.log(LogStatus.INFO, "Switching to Shipping Method page");
+        /*kateSpade.billingPage.fillEmailField(EMAIL);
         kateSpade.billingPage.fillCardName(CARDNAME_VISA);
         kateSpade.billingPage.fillCardNumber(CARDNUMBER_VISA);
         kateSpade.billingPage.selectMonth(MONTH);
@@ -78,7 +81,7 @@ public class GuestCheckoutTests extends Fixture {
         kateSpade.shippingPage.fillPhoneField(PHONE);
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
         kateSpade.shippingPage.select2DayExpressShipping();
-        kateSpade.shippingPage.switchToBillingPage();
+        kateSpade.shippingPage.switchToShippingMethodPage();
         kateSpade.billingPage.fillEmailField(EMAIL);
         kateSpade.billingPage.fillCardName(CARDNAME_MASTERCARD);
         kateSpade.billingPage.selectCardType(CARD_TYPE_2);
@@ -111,7 +114,7 @@ public class GuestCheckoutTests extends Fixture {
         kateSpade.shippingPage.fillPhoneField(PHONE);
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
         kateSpade.shippingPage.selectOvernightShipping();
-        kateSpade.shippingPage.switchToBillingPage();
+        kateSpade.shippingPage.switchToShippingMethodPage();
         kateSpade.billingPage.fillEmailField(EMAIL);
         kateSpade.billingPage.fillCardName(CARDNAME_AMEX);
         kateSpade.billingPage.selectCardType(CARD_TYPE_3);
@@ -144,7 +147,7 @@ public class GuestCheckoutTests extends Fixture {
         kateSpade.shippingPage.fillPhoneField(PHONE);
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
         kateSpade.shippingPage.select2DayExpressShipping();
-        kateSpade.shippingPage.switchToBillingPage();
+        kateSpade.shippingPage.switchToShippingMethodPage();
         kateSpade.billingPage.fillEmailField(EMAIL);
         kateSpade.billingPage.fillCardName(CARDNAME_DISCOVER);
         kateSpade.billingPage.selectCardType(CARD_TYPE_4);

@@ -15,9 +15,9 @@ public class CategoryLandingPage extends Page {
 
     public void switchToStandardPDP() {
         web.clickElement("FirstProductInGrid");
-        web.swithcToIframe();
-        //web.waitForElementPresent("FindItNearShopYouButton");
-        //web.waitForElementToBeClickable("FindItNearShopYouButton");
+        web.swithcToIframe1();
+        web.waitForElementPresent("FindItNearShopYouButton");
+        web.waitForElementToBeClickable("FindItNearShopYouButton");
 
         if(web.isElementPresent("FindItNearShopYouButton")
                 && web.isElementAvailable("FindItNearShopYouButton")){
@@ -41,4 +41,9 @@ public class CategoryLandingPage extends Page {
             Assert.fail("Switching to PDP was INCORRECT!");
         }
     }
+
+    public void openQuickViewHopup() {
+        web.doFocusToElementAndClick("FirstProductThumbnailInGrid", "QuickShopButton");
+    }
 }
+

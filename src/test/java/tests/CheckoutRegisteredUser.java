@@ -1,14 +1,13 @@
 package tests;
 
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 /**
  * Created by Rus on 18.01.2017.
  */
 public class CheckoutRegisteredUser extends Fixture {
 
-    @Test
+    //@Test
     public void checkoutAsRegisteredUser_OvernightShipping_Visa() {
         kateSpade.homePage.openPage(SITE_URL);
         kateSpade.header.switchToCLP();
@@ -29,7 +28,7 @@ public class CheckoutRegisteredUser extends Fixture {
         kateSpade.shippingPage.fillPhoneField(PHONE);
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
         kateSpade.shippingPage.selectOvernightShipping();
-        kateSpade.shippingPage.switchToBillingPage();
+        kateSpade.shippingPage.switchToShippingMethodPage();
         kateSpade.billingPage.fillCardName(CARDNAME_VISA);
         kateSpade.billingPage.fillCardNumberRegisteredUser(CARDNUMBER_VISA);
         kateSpade.billingPage.selectMonth(MONTH);
@@ -41,7 +40,7 @@ public class CheckoutRegisteredUser extends Fixture {
         kateSpade.header.switchToHomePage();
     }
 
-    @Test
+    //@Test
     public void checkoutAsRegisteredUser_GroundShipping_MasterCard(){
         kateSpade.homePage.openPage(SITE_URL);
         kateSpade.header.switchToCLP();
@@ -61,7 +60,7 @@ public class CheckoutRegisteredUser extends Fixture {
         kateSpade.shippingPage.selectState(STATE);
         kateSpade.shippingPage.fillPhoneField(PHONE);
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
-        kateSpade.shippingPage.switchToBillingPage();
+        kateSpade.shippingPage.switchToShippingMethodPage();
         kateSpade.billingPage.fillCardName(CARDNAME_MASTERCARD);
         kateSpade.billingPage.selectCardType(CARD_TYPE_2);
         kateSpade.billingPage.fillCardNumberRegisteredUser(CARDNUMBER_MASTERCARD);

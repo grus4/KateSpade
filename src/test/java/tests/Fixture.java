@@ -77,8 +77,8 @@ public class Fixture extends ExtentManager {
         extentReports = ExtentManager.getReporter(ExtentManager.filePath);
         //System.setProperty("webdriver.chrome.driver", "C:\\Tools\\chromedriver.exe");
         //webDriverWrapper = new WebDriverWrapper(new ChromeDriver());
-        //webDriverWrapper = WebDriverFactory.initDriver();
-        webDriverWrapper = WebDriverFactory.getInstance();
+        webDriverWrapper = WebDriverFactory.initDriver();
+        //webDriverWrapper = WebDriverFactory.getInstance();
         kateSpade = new KateSpade(webDriverWrapper);
 
         UIMappingSingleton.getInstance();

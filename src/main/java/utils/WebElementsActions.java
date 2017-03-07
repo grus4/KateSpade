@@ -277,7 +277,7 @@ public class WebElementsActions {
      * This method is used to switch to iframe by name
      */
     public void swithcToIframe1(){
-        webDriverWrapper.switchTo().frame("scroll-frame-iframe");
+        webDriverWrapper.switchTo().frame("__cvo_iframe");
 
     }
 

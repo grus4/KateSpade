@@ -52,17 +52,17 @@ public abstract class Page {
 
     public void openPage(String pageURL) {
         get(pageURL);
-        sleep(8000);
+        sleep(6000);
         log.info("Start open page.");
         log.info("I'm on the " + getCurrentPageURL());
 
-        /*if (pageURL.equals(getCurrentPageURL())) {
+        if (pageURL.equals(getCurrentPageURL())) {
             log.info("Page open successful.");
         } else {
             log.error("Error in open page!\n");
             Assert.fail("pageURL - " + pageURL + "\n" +
                     "CurrentUrl - " + getCurrentPageURL());
-        }*/
+        }
     }
 
     /*

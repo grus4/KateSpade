@@ -16,6 +16,8 @@ public class LoginTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.openLoginForm();
         extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(EMAIL);
@@ -37,6 +39,8 @@ public class LoginTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.openLoginForm();
         extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.clickSignInButton();
@@ -52,6 +56,8 @@ public class LoginTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.openLoginForm();
         extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_MISSING_AT);
@@ -71,6 +77,8 @@ public class LoginTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.openLoginForm();
         extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_MISSING_ADDRESS);
@@ -90,6 +98,8 @@ public class LoginTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.openLoginForm();
         extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_SUPERFLUOUS_TEXT);
@@ -109,6 +119,8 @@ public class LoginTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.openLoginForm();
         extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_COPY_PASTE_FROM_ADDRESS_BOOK_WITH_NAME);
@@ -128,6 +140,8 @@ public class LoginTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.openLoginForm();
         extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_COPY_WITH_TWO_AT);
@@ -147,6 +161,8 @@ public class LoginTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.openLoginForm();
         extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_SPECIAL_CHARACTERS);
@@ -167,6 +183,8 @@ public class LoginTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.openLoginForm();
         extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(EMAIL);
@@ -186,6 +204,8 @@ public class LoginTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.openLoginForm();
         extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.loginPage.fillEmailField(INVALID_EMAIL_MISSING_AT);

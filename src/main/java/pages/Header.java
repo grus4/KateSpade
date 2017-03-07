@@ -38,9 +38,11 @@ public class Header extends Page {
     }
 
     public void switchToCLP() {
-        web.moveToElementAndClick("ClothingCategory", "DressesSubcategory");
+        web.moveToElementAndClick("HandbagsCategory", "SatchelsSubcategory");
         web.waitForElementPresent("SortingDropDown");
         web.waitForElementToBeClickable("SortingDropDown");
+        web.waitForElementPresent("FirstProductThumbnailInGrid");
+        web.waitForElementToBeClickable("FirstProductThumbnailInGrid");
 
         if(web.isElementPresent("SortingDropDown")
                 && web.isElementAvailable("SortingDropDown")){
@@ -52,12 +54,12 @@ public class Header extends Page {
     }
 
     public void switchToShoppingCart() {
-        web.moveToElementAndClick("CartIcon", "ViewCart");
-        web.waitForElementPresent("BottomCheckoutButton");
-        web.waitForElementToBeClickable("BottomCheckoutButton");
+        web.clickButton("ViewBagButton");
+        web.waitForElementPresent("ProceedToCheckoutButton");
+        web.waitForElementToBeClickable("ProceedToCheckoutButton");
 
-        if(web.isElementPresent("BottomCheckoutButton")
-                && web.isElementAvailable("BottomCheckoutButton")){
+        if(web.isElementPresent("ProceedToCheckoutButton")
+                && web.isElementAvailable("ProceedToCheckoutButton")){
             log.info("Switching to the Shopping Cart was correct");
         } else {
             log.error("Switching to the Shopping Cart was INCORRECT!\n");

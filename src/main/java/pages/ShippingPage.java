@@ -56,18 +56,18 @@ public class ShippingPage extends Page {
         web.selectCheckbox("UseTheSameAddressForBillingCheckbox", "Y");
     }
 
-    public void switchToBillingPage() {
+    public void switchToShippingMethodPage() {
+        web.waitForElementToBeClickable("ContinueToShippingMethodsButton");
+        web.clickButton("ContinueToShippingMethodsButton");
+        web.waitForElementPresent("ContinueToBillingButton");
         web.waitForElementToBeClickable("ContinueToBillingButton");
-        web.clickButton("ContinueToBillingButton");
-        web.waitForElementPresent("CardNameField");
-        web.waitForElementToBeClickable("CardNameField");
 
-        if(web.isElementPresent("CardNameField")
-                && web.isElementAvailable("CardNameField")) {
-            log.info("Switching to Billing page was correct");
+        if(web.isElementPresent("ContinueToBillingButton")
+                && web.isElementAvailable("ContinueToBillingButton")) {
+            log.info("Switching to Shipping Method page was correct");
         } else {
-            log.error("Switching to Billing page was INCORRECT!\n");
-            Assert.fail("Switching to Billing page was INCORRECT!");
+            log.error("Switching to Shipping Method page was INCORRECT!\n");
+            Assert.fail("Switching to Shipping Method page was INCORRECT!");
         }
     }
 
@@ -77,5 +77,9 @@ public class ShippingPage extends Page {
 
     public void selectOvernightShipping() {
         web.clickElement("OvernightShipping");
+    }
+
+    public void selectCountry(String country) {
+        web.selectFromListByVisibleText("CountryDropDown", country);
     }
 }

@@ -12,7 +12,7 @@ public class ShoppingCartPage extends Page {
     }
 
     public void switchToLoginCheckoutPage() {
-        web.clickButton("BottomCheckoutButton");
+        web.clickButton("ProceedToCheckoutButton");
 
         if(web.isElementPresent("CheckoutAsGuest")
                 && web.isElementAvailable("CheckoutAsGuest")) {
@@ -21,5 +21,20 @@ public class ShoppingCartPage extends Page {
             log.error("Switching to Checkout Login Page was INCORRECT!\n");
             Assert.fail("Switching to Checkout Login Page was INCORRECT!");
         }
+    }
+
+    public void switchToShippingPage() {
+        web.clickButton("ProceedToCheckoutButton");
+        /*if(web.isElementPresent("FirstNameField")
+                && web.isElementAvailable("CheckoutAsGuest")) {
+            log.info("Switching to Shipping Page was correct");
+        } else {
+            log.error("Switching to Shipping Page was INCORRECT!\n");
+            Assert.fail("Switching to Shipping Page was INCORRECT!");
+        }*/
+    }
+
+    public void switchToIframe() {
+        web.swithcToIframe1();
     }
 }

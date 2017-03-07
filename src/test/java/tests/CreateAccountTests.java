@@ -16,6 +16,8 @@ public class CreateAccountTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.openLoginForm();
         extentTest.log(LogStatus.INFO, "Open Login Form");
         kateSpade.header.switchToCreateAccountHopup();
@@ -46,6 +48,8 @@ public class CreateAccountTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.switchToCreateAccountHopup();
         extentTest.log(LogStatus.INFO, "Switching to Create Account hopup");
         kateSpade.createAccountPage.clickSubmitButton();
@@ -61,6 +65,8 @@ public class CreateAccountTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.switchToCreateAccountHopup();
         extentTest.log(LogStatus.INFO, "Switching to Create Account hopup");
         kateSpade.createAccountPage.fillFirstNameField(FIRSTNAME);
@@ -90,6 +96,8 @@ public class CreateAccountTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.switchToCreateAccountHopup();
         extentTest.log(LogStatus.INFO, "Switching to Create Account hopup");
         kateSpade.createAccountPage.fillFirstNameField(FIRSTNAME);
@@ -119,6 +127,8 @@ public class CreateAccountTests extends Fixture {
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.switchToCreateAccountHopup();
         extentTest.log(LogStatus.INFO, "Switching to Create Account hopup");
         kateSpade.createAccountPage.fillFirstNameField(FIRSTNAME);
@@ -142,10 +152,12 @@ public class CreateAccountTests extends Fixture {
     @Test
     public void createAccountFormValidation_PasswordLength() {
         extentTest = extentReports
-                .startTest("createAccountFormValidation_With_DifferentPassword_And_ConfirmPassword")
+                .startTest("createAccountFormValidation_PasswordLength")
                 .assignCategory("Smoke Testing");
         kateSpade.homePage.openPage(SITE_URL);
         extentTest.log(LogStatus.INFO, "Open Kate Spade Home Page");
+        kateSpade.homePage.refreshPage();
+        extentTest.log(LogStatus.INFO, "Refresh Home Page");
         kateSpade.header.switchToCreateAccountHopup();
         extentTest.log(LogStatus.INFO, "Switching to Create Account hopup");
         kateSpade.createAccountPage.fillFirstNameField(FIRSTNAME);
