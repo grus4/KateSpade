@@ -68,6 +68,7 @@ public class Fixture extends ExtentManager {
     protected static final String CARD_TYPE_4 = PropertyLoader.loadProperty("card.type.discover");
 
 
+
     public ExtentTest extentTest;
 
 

@@ -64,4 +64,8 @@ public class BillingPage extends Page {
     public void fillSecurityCodeRegisteredUser(String securityCode) {
         web.input("SecurityCodeFieldRegisteredUser", securityCode);
     }
+
+    public void selectCreditCardRadioButton() {
+        web.clickElement("CreditCardRadioButton");
+    }
 }

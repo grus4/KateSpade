@@ -25,7 +25,7 @@ public class KateSpade {
     public OrderReceiptPage orderReceiptPage;
     public VariationPDP variationPDP;
     public QuickViewHopup quickViewHopup;
-    public ShippingMethodsPage shippingMethodPage;
+    public ShippingMethodsPage shippingMethodsPage;
 
     public KateSpade(WebDriverWrapper webDriverWrapper) {
         web = new WebElementsActions(webDriverWrapper);
@@ -45,6 +45,6 @@ public class KateSpade {
         orderReceiptPage = new OrderReceiptPage(webDriverWrapper);
         variationPDP = new VariationPDP(webDriverWrapper);
         quickViewHopup = new QuickViewHopup(webDriverWrapper);
-        shippingMethodPage = new ShippingMethodsPage(webDriverWrapper);
+        shippingMethodsPage = new ShippingMethodsPage(webDriverWrapper);
     }
 }

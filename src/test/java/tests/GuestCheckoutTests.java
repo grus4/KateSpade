@@ -49,14 +49,17 @@ public class GuestCheckoutTests extends Fixture {
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
         extentTest.log(LogStatus.INFO, "Check the This is also my billing address checkbox");
         kateSpade.shippingPage.switchToShippingMethodPage();
-        extentTest.log(LogStatus.INFO, "Switching to Shipping Method page");
-        /*kateSpade.billingPage.fillEmailField(EMAIL);
+        extentTest.log(LogStatus.INFO, "Switching to Shipping Methods page");
+        kateSpade.shippingMethodsPage.switchToBillingPage();
+        extentTest.log(LogStatus.INFO, "Switching to Billing page");
+        kateSpade.billingPage.selectCreditCardRadioButton();
         kateSpade.billingPage.fillCardName(CARDNAME_VISA);
         kateSpade.billingPage.fillCardNumber(CARDNUMBER_VISA);
         kateSpade.billingPage.selectMonth(MONTH);
         kateSpade.billingPage.selectYear(YEAR);
         kateSpade.billingPage.fillSecurityCode(VISA_CVV);
-        kateSpade.billingPage.switchToReviewPage();
+        kateSpade.billingPage.fillEmailField(EMAIL);
+        /*kateSpade.billingPage.switchToReviewPage();
         kateSpade.reviewPage.switchToOrderReceiptPage();
         Assert.assertTrue(kateSpade.orderReceiptPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
         kateSpade.header.switchToHomePage();*/

@@ -57,9 +57,8 @@ public class ShippingPage extends Page {
     }
 
     public void switchToShippingMethodPage() {
-        //web.waitForElementToBeClickable("ContinueToShippingMethodsButton");
         web.clickButton("ContinueToShippingMethodsButton");
-        /*web.waitForElementPresent("ContinueToBillingButton");
+        web.waitForElementPresent("ContinueToBillingButton");
         web.waitForElementToBeClickable("ContinueToBillingButton");
 
         if(web.isElementPresent("ContinueToBillingButton")
@@ -68,7 +67,9 @@ public class ShippingPage extends Page {
         } else {
             log.error("Switching to Shipping Method page was INCORRECT!\n");
             Assert.fail("Switching to Shipping Method page was INCORRECT!");
-        }*/
+        }
+        //web.refreshPage();
+        sleep(3000);
     }
 
     public void select2DayExpressShipping() {
