@@ -78,8 +78,8 @@ public class Fixture extends ExtentManager {
         extentReports = ExtentManager.getReporter(ExtentManager.filePath);
         //System.setProperty("webdriver.chrome.driver", "C:\\Tools\\chromedriver.exe");
         //webDriverWrapper = new WebDriverWrapper(new ChromeDriver());
-        webDriverWrapper = WebDriverFactory.initDriver();
-        //webDriverWrapper = WebDriverFactory.getInstance();
+        //webDriverWrapper = WebDriverFactory.initDriver();
+        webDriverWrapper = WebDriverFactory.getInstance();
         kateSpade = new KateSpade(webDriverWrapper);
 
         UIMappingSingleton.getInstance();
@@ -90,11 +90,11 @@ public class Fixture extends ExtentManager {
     @AfterMethod
     public void afterMethod(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE) {
-            kateSpade.screenShotMaker.takeScreenShot(result.getName());
+            //kateSpade.screenShotMaker.takeScreenShot(result.getName());
             String screenshot_path = Utility.captureScreenshot(driver, result.getName());
             //String image = extentTest.addScreenCapture(screenshot_path);
             extentTest.log(LogStatus.FAIL, result.getThrowable());
-            //extentTest.log(LogStatus.FAIL, "Snapshot below: " + extentTest.addScreenCapture(screenshot_path));
+            extentTest.log(LogStatus.FAIL, "Snapshot below: " + extentTest.addScreenCapture(screenshot_path));
 
         } else {
             if (result.getStatus() == ITestResult.SKIP) {
