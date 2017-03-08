@@ -18,7 +18,7 @@ public class HomePage extends Page {
 
     public void refreshPage() {
         web.refreshPage();
-        sleep(3000);
+        //sleep(3000);
     }
 
 

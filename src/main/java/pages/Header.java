@@ -57,6 +57,7 @@ public class Header extends Page {
         web.clickButton("ViewBagButton");
         web.waitForElementPresent("ProceedToCheckoutButton");
         web.waitForElementToBeClickable("ProceedToCheckoutButton");
+        web.refreshPage();
 
         if(web.isElementPresent("ProceedToCheckoutButton")
                 && web.isElementAvailable("ProceedToCheckoutButton")){
