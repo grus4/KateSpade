@@ -23,4 +23,12 @@ public class ShippingMethodsPage extends Page {
             Assert.fail("Switching to Billing page was INCORRECT!");
         }
     }
+
+    public void select2DayShippingMethod() {
+        web.selectFromList("ShippingMethodsDropDown", "Second_Day");
+    }
+
+    public void selectNextDayShippingMethod() {
+        web.selectFromList("ShippingMethodsDropDown", "1DAY");
+    }
 }

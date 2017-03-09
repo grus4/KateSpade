@@ -108,7 +108,7 @@ public class Fixture extends ExtentManager {
         extentReports.flush();
     }
 
-    //@AfterSuite(alwaysRun = true)
+    @AfterSuite(alwaysRun = true)
     public static void tearDown() {
         webDriverWrapper.quit();
         extentReports.close();

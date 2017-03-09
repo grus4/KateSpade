@@ -72,13 +72,6 @@ public class ShippingPage extends Page {
         sleep(3000);
     }
 
-    public void select2DayExpressShipping() {
-        web.clickElement("2DayExpressShipping");
-    }
-
-    public void selectOvernightShipping() {
-        web.clickElement("OvernightShipping");
-    }
 
     public void selectCountry(String country) {
         web.selectFromListByVisibleText("CountryDropDown", country);

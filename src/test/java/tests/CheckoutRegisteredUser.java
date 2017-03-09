@@ -27,7 +27,6 @@ public class CheckoutRegisteredUser extends Fixture {
         kateSpade.shippingPage.selectState(STATE);
         kateSpade.shippingPage.fillPhoneField(PHONE);
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
-        kateSpade.shippingPage.selectOvernightShipping();
         kateSpade.shippingPage.switchToShippingMethodPage();
         kateSpade.billingPage.fillCardName(CARDNAME_VISA);
         kateSpade.billingPage.fillCardNumberRegisteredUser(CARDNUMBER_VISA);
