@@ -58,7 +58,7 @@ public class CreateAccountTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Error message is displayed under each empty field");
     }
 
-    @Test
+    //@Test
     public void createAccountFormValidation_Re_RegisterTheSameUser() {
         extentTest = extentReports
                 .startTest("createAccountFormValidation_Re_RegisterTheSameUser")
@@ -89,7 +89,7 @@ public class CreateAccountTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Email address already registered message is displayed correctly");
     }
 
-    @Test
+    //@Test
     public void createAccountFormValidation_With_DifferentEmail_In_Email_And_ConfirmEmail_Fields() {
         extentTest = extentReports
                 .startTest("createAccountFormValidation_With_DifferentEmail_In_Email_And_ConfirmEmail_Fields")
@@ -120,7 +120,7 @@ public class CreateAccountTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Mismatching emails message is displayed correctly");
     }
 
-    @Test
+    //@Test
     public void createAccountFormValidation_With_DifferentPassword_And_ConfirmPassword() {
         extentTest = extentReports
                 .startTest("createAccountFormValidation_With_DifferentPassword_And_ConfirmPassword")
@@ -149,7 +149,7 @@ public class CreateAccountTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Mismatching passwords message is displayed correctly");
     }
 
-    @Test
+    //@Test
     public void createAccountFormValidation_PasswordLength() {
         extentTest = extentReports
                 .startTest("createAccountFormValidation_PasswordLength")
