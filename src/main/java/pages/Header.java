@@ -43,6 +43,7 @@ public class Header extends Page {
         web.waitForElementToBeClickable("SortingDropDown");
         web.waitForElementPresent("FirstProductThumbnailInGrid");
         web.waitForElementToBeClickable("FirstProductThumbnailInGrid");
+        sleep(3000);
 
         if(web.isElementPresent("SortingDropDown")
                 && web.isElementAvailable("SortingDropDown")){
@@ -75,7 +76,7 @@ public class Header extends Page {
     public void checkCongratulationMessage() {
 
         if(web.isElementPresent("CongratulationLink")
-                && web.getElementText("CongratulationLink").equals("hi, Max")) {
+                && web.getElementText("CongratulationLink").equals("HI, MAX")) {
             log.info("Congratulation Message is displayed correctly");
         } else {
             log.error("Congratulation Message is displayed INCORRECTLY!!" + "\n"

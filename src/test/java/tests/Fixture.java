@@ -92,7 +92,7 @@ public class Fixture extends ExtentManager {
         if (result.getStatus() == ITestResult.FAILURE) {
             //kateSpade.screenShotMaker.takeScreenShot(result.getName());
             String screenshot_path = Utility.captureScreenshot(driver, result.getName());
-            //String image = extentTest.addScreenCapture(screenshot_path);
+            String image = extentTest.addScreenCapture(screenshot_path);
             extentTest.log(LogStatus.FAIL, result.getThrowable());
             extentTest.log(LogStatus.FAIL, "Snapshot below: " + extentTest.addScreenCapture(screenshot_path));
 
@@ -108,7 +108,7 @@ public class Fixture extends ExtentManager {
         extentReports.flush();
     }
 
-    @AfterSuite(alwaysRun = true)
+    //@AfterSuite(alwaysRun = true)
     public static void tearDown() {
         webDriverWrapper.quit();
         extentReports.close();

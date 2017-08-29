@@ -31,7 +31,7 @@ public class LoginPage extends Page {
 
     public void checkValidationForEmailAddressEmptyField() {
         if(web.isElementPresent("ErrorMessageForEmptyEmailField")
-                && web.getElementText("ErrorMessageForEmptyEmailField").equals("required")){
+                && web.getElementText("ErrorMessageForEmptyEmailField").equals("Please enter your email address")){
             log.info("Email Address Error Message for empty field is displayed correctly under the field");
         } else {
             log.error("Email Address Error Message for empty field is displayed INCORRECTLY!" + "\n"
@@ -46,7 +46,7 @@ public class LoginPage extends Page {
 
     public void checkValidationForPasswordEmptyField() {
         if(web.isElementPresent("ErrorMessageForPasswordField")
-                && web.getElementText("ErrorMessageForPasswordField").equals("required")){
+                && web.getElementText("ErrorMessageForPasswordField").equals("Please enter your password")){
             log.info("Password Error Message for empty field is displayed correctly under the field");
         } else {
             log.error("Password Error Message for empty field is displayed INCORRECTLY!" + "\n"
@@ -65,7 +65,7 @@ public class LoginPage extends Page {
 
     public void checkValidationForInvalidData() {
         if(web.isElementPresent("ErrorMessageForInvalidDataInEmailField")
-                && web.getElementText("ErrorMessageForInvalidDataInEmailField").equals("please enter a valid email address.")){
+                && web.getElementText("ErrorMessageForInvalidDataInEmailField").toLowerCase().equals("please enter a valid email address.")){
             log.info("Error message for Invalid Data in Email field is displayed correctly above the Login Form");
         } else {
             log.error("Error message for Invalid Data in Email field is displayed INCORRETLY!" + "\n"

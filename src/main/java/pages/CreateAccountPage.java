@@ -94,7 +94,7 @@ public class CreateAccountPage extends Page{
 
     public void checkValidationForEmptyEmailField(){
         if(web.isElementPresent("ErrorMessageForEmptyEmail")
-                && web.getElementText("ErrorMessageForEmptyEmail").toLowerCase().equals("please enter an email.")){
+                && web.getElementText("ErrorMessageForEmptyEmail").toLowerCase().equals("please provide a valid email address")){
             log.info("Email Error Message for empty field is displayed correctly under the field");
         } else {
             log.error("Email Error Message for empty field is displayed INCORRECTLY!" + "\n"
@@ -109,7 +109,7 @@ public class CreateAccountPage extends Page{
 
     public void checkValidationForEmptyConfirmEmailField(){
         if(web.isElementPresent("ErrorMessageForEmptyConfirmEmail")
-                && web.getElementText("ErrorMessageForEmptyConfirmEmail").toLowerCase().equals("please enter an email confirmation")){
+                && web.getElementText("ErrorMessageForEmptyConfirmEmail").toLowerCase().equals("please provide a valid email address")){
             log.info("Confirm Email Error Message for empty field is displayed correctly under the field");
         } else {
             log.error("Confirm Email Error Message for empty field is displayed INCORRECTLY!" + "\n"
@@ -139,7 +139,7 @@ public class CreateAccountPage extends Page{
 
     public void checkValidationForEmptyConfirmPasswordField(){
         if(web.isElementPresent("ErrorMessageForEmptyConfirmPassword")
-                && web.getElementText("ErrorMessageForEmptyConfirmPassword").toLowerCase().equals("please enter a password confirmation")){
+                && web.getElementText("ErrorMessageForEmptyConfirmPassword").toLowerCase().equals("please enter a password")){
             log.info("Confirm Password Error Message for empty field is displayed correctly under the field");
         } else {
             log.error("Confirm Password Error Message for empty field is displayed INCORRECTLY!" + "\n"
@@ -206,7 +206,7 @@ public class CreateAccountPage extends Page{
 
     public void checkFormValidation_with_IncorrectPasswordLength() {
         if(web.isElementPresent("ErrorMessageForIncorrectPasswordLength")
-                && web.getElementText("ErrorMessageForIncorrectPasswordLength").equals("7 - 20 characters")){
+                && web.getElementText("ErrorMessageForIncorrectPasswordLength").toLowerCase().equals("please enter a value between 7 and 20 characters long.")){
             log.info("Error message for incorrect Password length is displayed");
         } else {
             log.error("Error message for incorrect Password length is displayed INCORRECTLY!" + "\n"

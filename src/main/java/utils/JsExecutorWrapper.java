@@ -61,15 +61,10 @@ public class JsExecutorWrapper {
     public void clickOnElement(String element) {
         js.executeScript("arguments[0].click();", element);
     }
-    /*
-    Click a button in Selenium WebDriver using JavaScript
-
-    public void clickOnElement
-        Code:
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].click();", element);
-
-    */
 
 
-}
+    }
+
+
+
+
