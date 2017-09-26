@@ -55,6 +55,7 @@ public class Fixture extends ExtentManager {
     protected static final String CARDNUMBER_MASTERCARD = PropertyLoader.loadProperty("card.number2");
     protected static final String MONTH = PropertyLoader.loadProperty("month");
     protected static final String YEAR = PropertyLoader.loadProperty("year");
+    protected static final String MONTH_YEAR = PropertyLoader.loadProperty("month_year");
     protected static final String VISA_CVV = PropertyLoader.loadProperty("cvv1");
     protected static final String MASTERCARD_CVV = PropertyLoader.loadProperty("cvv2");
     protected static final String CARDNAME_AMEX = PropertyLoader.loadProperty("card.name3");
@@ -92,7 +93,7 @@ public class Fixture extends ExtentManager {
         if (result.getStatus() == ITestResult.FAILURE) {
             //kateSpade.screenShotMaker.takeScreenShot(result.getName());
             String screenshot_path = Utility.captureScreenshot(driver, result.getName());
-            String image = extentTest.addScreenCapture(screenshot_path);
+            //String image = extentTest.addScreenCapture(screenshot_path);
             extentTest.log(LogStatus.FAIL, result.getThrowable());
             extentTest.log(LogStatus.FAIL, "Snapshot below: " + extentTest.addScreenCapture(screenshot_path));
 
@@ -108,7 +109,7 @@ public class Fixture extends ExtentManager {
         extentReports.flush();
     }
 
-    //@AfterSuite(alwaysRun = true)
+    @AfterSuite(alwaysRun = true)
     public static void tearDown() {
         webDriverWrapper.quit();
         extentReports.close();

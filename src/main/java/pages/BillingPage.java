@@ -40,7 +40,7 @@ public class BillingPage extends Page {
     }
 
     public void switchToReviewPage() {
-        web.clickButton("ContinueToPlaceOrderButton");
+        web.clickButton("ReviewYourOrderButton");
         web.waitForElementPresent("PlaceOrderButton");
         web.waitForElementToBeClickable("PlaceOrderButton");
 
@@ -67,5 +67,9 @@ public class BillingPage extends Page {
 
     public void selectCreditCardRadioButton() {
         web.clickElement("CreditCardRadioButton");
+    }
+
+    public void fillMonth(String month) {
+        web.input("MonthField", month);
     }
 }

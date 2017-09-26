@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 
 public class GuestCheckoutTests extends Fixture {
 
+
     @Test
     public void guestCheckout_FreeGround_VISA() {
         extentTest = extentReports
@@ -27,8 +28,10 @@ public class GuestCheckoutTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Add product to the mini cart");
         kateSpade.header.switchToShoppingCart();
         extentTest.log(LogStatus.INFO, "Switching to the Shopping cart");
-        kateSpade.shoppingCartPage.switchToShippingPage();
-        extentTest.log(LogStatus.INFO, "Switching to the Shipping cart");
+        kateSpade.shoppingCartPage.switchToLoginCheckoutPage();
+        extentTest.log(LogStatus.INFO, "Switching to the Login Checkout page");
+        kateSpade.checkoutLoginPage.switchToGuestShippingPage();
+        extentTest.log(LogStatus.INFO, "Switching to the Shipping page");
         kateSpade.shippingPage.fillFirstNameField(FIRSTNAME);
         extentTest.log(LogStatus.INFO, "Fill in the  First Name field on the Shipping page");
         kateSpade.shippingPage.fillLastNameField(LASTNAME);
@@ -36,6 +39,7 @@ public class GuestCheckoutTests extends Fixture {
         kateSpade.shippingPage.fillAddressLine_1_Field(ADDRESS_1);
         extentTest.log(LogStatus.INFO, "Fill in the address field");
         kateSpade.shippingPage.fillAddressLine_2_Field("");
+        extentTest.log(LogStatus.INFO, "Leave the address field 2 empty");
         kateSpade.shippingPage.selectCountry(COUNTRY);
         extentTest.log(LogStatus.INFO, "Select Country from the drop down field");
         kateSpade.shippingPage.fillCityField(CITY);
@@ -46,26 +50,27 @@ public class GuestCheckoutTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Fill in the zip field");
         kateSpade.shippingPage.fillPhoneField(PHONE);
         extentTest.log(LogStatus.INFO, "Fill in the phone field");
+        kateSpade.shippingPage.fillEmailField(EMAIL);
+        extentTest.log(LogStatus.INFO, "Fill in the email field");
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
         extentTest.log(LogStatus.INFO, "Check the This is also my billing address checkbox");
-        kateSpade.shippingPage.switchToShippingMethodPage();
-        extentTest.log(LogStatus.INFO, "Switching to Shipping Methods page");
-        kateSpade.shippingMethodsPage.switchToBillingPage();
+        kateSpade.shippingPage.switchToBillingPage();
         extentTest.log(LogStatus.INFO, "Switching to Billing page");
-        kateSpade.billingPage.selectCreditCardRadioButton();
-        extentTest.log(LogStatus.INFO, "Select Credit Card radio button");
         kateSpade.billingPage.fillCardName(CARDNAME_VISA);
         extentTest.log(LogStatus.INFO, "Fill in the Card Name field");
         kateSpade.billingPage.fillCardNumber(CARDNUMBER_VISA);
         extentTest.log(LogStatus.INFO, "Fill in the Card Number field");
-        kateSpade.billingPage.selectMonth(MONTH);
-        extentTest.log(LogStatus.INFO, "Select month from the drop down field");
-        kateSpade.billingPage.selectYear(YEAR);
-        extentTest.log(LogStatus.INFO, "Select year from the drop down field");
+        kateSpade.billingPage.fillMonth(MONTH_YEAR);
+        extentTest.log(LogStatus.INFO, "Fill in month and year");
         kateSpade.billingPage.fillSecurityCode(VISA_CVV);
         extentTest.log(LogStatus.INFO, "Fill in the CVV field with correct data");
-        kateSpade.billingPage.fillEmailField(EMAIL);
-        extentTest.log(LogStatus.INFO, "Fill in the email field on Billing page");
+        kateSpade.billingPage.switchToReviewPage();
+        extentTest.log(LogStatus.INFO, "Switching to Review page");
+        kateSpade.reviewPage.switchToOrderReceiptPage();
+        extentTest.log(LogStatus.INFO, "Switching to the Order Receipt page");
+        Assert.assertTrue(kateSpade.orderReceiptPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
+        extentTest.log(LogStatus.INFO, "The order has been created successfully");
+        kateSpade.orderReceiptPage.deleteAllCookies();
 
     }
 
@@ -86,8 +91,10 @@ public class GuestCheckoutTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Add product to the mini cart");
         kateSpade.header.switchToShoppingCart();
         extentTest.log(LogStatus.INFO, "Switching to the Shopping cart");
-        kateSpade.shoppingCartPage.switchToShippingPage();
-        extentTest.log(LogStatus.INFO, "Switching to the Shipping cart");
+        kateSpade.shoppingCartPage.switchToLoginCheckoutPage();
+        extentTest.log(LogStatus.INFO, "Switching to the Login Checkout page");
+        kateSpade.checkoutLoginPage.switchToGuestShippingPage();
+        extentTest.log(LogStatus.INFO, "Switching to the Shipping page");
         kateSpade.shippingPage.fillFirstNameField(FIRSTNAME);
         extentTest.log(LogStatus.INFO, "Fill in the  First Name field on the Shipping page");
         kateSpade.shippingPage.fillLastNameField(LASTNAME);
@@ -95,6 +102,7 @@ public class GuestCheckoutTests extends Fixture {
         kateSpade.shippingPage.fillAddressLine_1_Field(ADDRESS_1);
         extentTest.log(LogStatus.INFO, "Fill in the address field");
         kateSpade.shippingPage.fillAddressLine_2_Field("");
+        extentTest.log(LogStatus.INFO, "Leave the address field 2 empty");
         kateSpade.shippingPage.selectCountry(COUNTRY);
         extentTest.log(LogStatus.INFO, "Select Country from the drop down field");
         kateSpade.shippingPage.fillCityField(CITY);
@@ -105,32 +113,29 @@ public class GuestCheckoutTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Fill in the zip field");
         kateSpade.shippingPage.fillPhoneField(PHONE);
         extentTest.log(LogStatus.INFO, "Fill in the phone field");
+        kateSpade.shippingPage.fillEmailField(EMAIL);
+        extentTest.log(LogStatus.INFO, "Fill in the email field");
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
         extentTest.log(LogStatus.INFO, "Check the This is also my billing address checkbox");
-        kateSpade.shippingPage.switchToShippingMethodPage();
-        extentTest.log(LogStatus.INFO, "Switching to Shipping Methods page");
-        kateSpade.shippingMethodsPage.select2DayShippingMethod();
-        extentTest.log(LogStatus.INFO, "Select the 2Day Shipping method from the drop down menu");
-        kateSpade.shippingMethodsPage.switchToBillingPage();
+        kateSpade.shippingPage.select2DayShippingMethod();
+        extentTest.log(LogStatus.INFO, "Select the 2Day Shipping delivery method");
+        kateSpade.shippingPage.switchToBillingPage();
         extentTest.log(LogStatus.INFO, "Switching to Billing page");
-        kateSpade.billingPage.selectCreditCardRadioButton();
-        extentTest.log(LogStatus.INFO, "Select Credit Card radio button");
-        kateSpade.billingPage.selectCardType(CARD_TYPE_2);
-        extentTest.log(LogStatus.INFO, "Select Master Card from the drop down menu");
         kateSpade.billingPage.fillCardName(CARDNAME_MASTERCARD);
         extentTest.log(LogStatus.INFO, "Fill in the Card Name field");
         kateSpade.billingPage.fillCardNumber(CARDNUMBER_MASTERCARD);
         extentTest.log(LogStatus.INFO, "Fill in the Card Number field");
-        kateSpade.billingPage.selectMonth(MONTH);
-        extentTest.log(LogStatus.INFO, "Select month from the drop down field");
-        kateSpade.billingPage.selectYear(YEAR);
-        extentTest.log(LogStatus.INFO, "Select year from the drop down field");
+        kateSpade.billingPage.fillMonth(MONTH_YEAR);
+        extentTest.log(LogStatus.INFO, "Fill in month and year");
         kateSpade.billingPage.fillSecurityCode(MASTERCARD_CVV);
         extentTest.log(LogStatus.INFO, "Fill in the CVV field with correct data");
-        kateSpade.billingPage.fillEmailField(EMAIL);
-        extentTest.log(LogStatus.INFO, "Fill in the email field on Billing page");
-        kateSpade.billingPage.deleteAllCookies();
-        kateSpade.billingPage.web.refreshPage2();
+        kateSpade.billingPage.switchToReviewPage();
+        extentTest.log(LogStatus.INFO, "Switching to Review page");
+        kateSpade.reviewPage.switchToOrderReceiptPage();
+        extentTest.log(LogStatus.INFO, "Switching to the Order Receipt page");
+        Assert.assertTrue(kateSpade.orderReceiptPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
+        extentTest.log(LogStatus.INFO, "The order has been created successfully");
+        kateSpade.orderReceiptPage.deleteAllCookies();
     }
 
     @Test
@@ -150,8 +155,10 @@ public class GuestCheckoutTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Add product to the mini cart");
         kateSpade.header.switchToShoppingCart();
         extentTest.log(LogStatus.INFO, "Switching to the Shopping cart");
-        kateSpade.shoppingCartPage.switchToShippingPage();
-        extentTest.log(LogStatus.INFO, "Switching to the Shipping cart");
+        kateSpade.shoppingCartPage.switchToLoginCheckoutPage();
+        extentTest.log(LogStatus.INFO, "Switching to the Login Checkout page");
+        kateSpade.checkoutLoginPage.switchToGuestShippingPage();
+        extentTest.log(LogStatus.INFO, "Switching to the Shipping page");
         kateSpade.shippingPage.fillFirstNameField(FIRSTNAME);
         extentTest.log(LogStatus.INFO, "Fill in the  First Name field on the Shipping page");
         kateSpade.shippingPage.fillLastNameField(LASTNAME);
@@ -159,6 +166,7 @@ public class GuestCheckoutTests extends Fixture {
         kateSpade.shippingPage.fillAddressLine_1_Field(ADDRESS_1);
         extentTest.log(LogStatus.INFO, "Fill in the address field");
         kateSpade.shippingPage.fillAddressLine_2_Field("");
+        extentTest.log(LogStatus.INFO, "Leave the address field 2 empty");
         kateSpade.shippingPage.selectCountry(COUNTRY);
         extentTest.log(LogStatus.INFO, "Select Country from the drop down field");
         kateSpade.shippingPage.fillCityField(CITY);
@@ -169,35 +177,32 @@ public class GuestCheckoutTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Fill in the zip field");
         kateSpade.shippingPage.fillPhoneField(PHONE);
         extentTest.log(LogStatus.INFO, "Fill in the phone field");
+        kateSpade.shippingPage.fillEmailField(EMAIL);
+        extentTest.log(LogStatus.INFO, "Fill in the email field");
         kateSpade.shippingPage.selectUseTheSameAddressForBillingCheckbox();
         extentTest.log(LogStatus.INFO, "Check the This is also my billing address checkbox");
-        kateSpade.shippingPage.switchToShippingMethodPage();
-        extentTest.log(LogStatus.INFO, "Switching to Shipping Methods page");
-        kateSpade.shippingMethodsPage.selectNextDayShippingMethod();
-        extentTest.log(LogStatus.INFO, "Select the Next Day Shipping method from the drop down menu");
-        kateSpade.shippingMethodsPage.switchToBillingPage();
+        kateSpade.shippingPage.selectNextDayShippingMethod();
+        extentTest.log(LogStatus.INFO, "Select the Next Day Shipping delivery method");
+        kateSpade.shippingPage.switchToBillingPage();
         extentTest.log(LogStatus.INFO, "Switching to Billing page");
-        kateSpade.billingPage.selectCreditCardRadioButton();
-        extentTest.log(LogStatus.INFO, "Select Credit Card radio button");
-        kateSpade.billingPage.selectCardType(CARD_TYPE_3);
-        extentTest.log(LogStatus.INFO, "Select American Express Card from the drop down menu");
         kateSpade.billingPage.fillCardName(CARDNAME_AMEX);
         extentTest.log(LogStatus.INFO, "Fill in the Card Name field");
         kateSpade.billingPage.fillCardNumber(CARDNUMBER_AMEX);
         extentTest.log(LogStatus.INFO, "Fill in the Card Number field");
-        kateSpade.billingPage.selectMonth(MONTH);
-        extentTest.log(LogStatus.INFO, "Select month from the drop down field");
-        kateSpade.billingPage.selectYear(YEAR);
-        extentTest.log(LogStatus.INFO, "Select year from the drop down field");
+        kateSpade.billingPage.fillMonth(MONTH_YEAR);
+        extentTest.log(LogStatus.INFO, "Fill in month and year");
         kateSpade.billingPage.fillSecurityCode(AMEX_CVV);
         extentTest.log(LogStatus.INFO, "Fill in the CVV field with correct data");
-        kateSpade.billingPage.fillEmailField(EMAIL);
-        extentTest.log(LogStatus.INFO, "Fill in the email field on Billing page");
-        kateSpade.billingPage.deleteAllCookies();
-        kateSpade.billingPage.web.refreshPage2();
+        kateSpade.billingPage.switchToReviewPage();
+        extentTest.log(LogStatus.INFO, "Switching to Review page");
+        kateSpade.reviewPage.switchToOrderReceiptPage();
+        extentTest.log(LogStatus.INFO, "Switching to the Order Receipt page");
+        Assert.assertTrue(kateSpade.orderReceiptPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
+        extentTest.log(LogStatus.INFO, "The order has been created successfully");
+        kateSpade.orderReceiptPage.deleteAllCookies();
     }
 
-    @Test
+    //@Test
     public void guestCheckout_2DayExpress_Discover() {
         extentTest = extentReports
                 .startTest("guestCheckout_Overnight_AmericanExpress")

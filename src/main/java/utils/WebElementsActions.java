@@ -252,6 +252,16 @@ public class WebElementsActions {
     }
 
     /**
+     * This method is used to do Focus to Element
+     */
+    public void doFocusToElement(String focusElementLocator) {
+        new Actions(webDriverWrapper.getOriginalDriver()).moveToElement(getElement(focusElementLocator)).perform();
+        log.info("Focus in to element " + focusElementLocator);
+
+        webDriverWrapper.switchTo();
+    }
+
+    /**
      * This method is used to click on something and open window in New Tab
      * Use Actions class
      */

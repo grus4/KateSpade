@@ -44,6 +44,7 @@ public class CategoryLandingPage extends Page {
 
     public void openQuickViewHopup() {
         web.doFocusToElementAndClick("FirstProductThumbnailInGrid", "QuickShopButton");
+        web.waitForElementToBeClickable("AddToBagButton");
     }
 }
 

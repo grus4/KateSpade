@@ -76,4 +76,30 @@ public class ShippingPage extends Page {
     public void selectCountry(String country) {
         web.selectFromListByVisibleText("CountryDropDown", country);
     }
+
+    public void fillEmailField(String email) {
+        web.input("EmailFieldOfShippingPage", email);
+    }
+
+    public void switchToBillingPage() {
+        web.clickButton("ContinueToPaymentButton");
+        web.waitForElementPresent("CardNameField");
+        web.waitForElementToBeClickable("CardNameField");
+
+        if(web.isElementPresent("CardNameField")
+                && web.isElementAvailable("CardNameField")) {
+            log.info("Switching to Billing page was correct");
+        } else {
+            log.error("Switching to Billing page was INCORRECT!\n");
+            Assert.fail("Switching to Billing page was INCORRECT!");
+        }
+    }
+
+    public void select2DayShippingMethod() {
+        web.clickElement("2DayShipping");
+    }
+
+    public void selectNextDayShippingMethod() {
+        web.clickElement("NextDay");
+    }
 }
